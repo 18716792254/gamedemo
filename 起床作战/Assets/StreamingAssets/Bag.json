@@ -1,0 +1,22 @@
+[
+  {
+    "itemname": "Medicine",
+    "itemid": 0,
+    "itemsortindex": 0,
+    "itemdesc": "使用血量回复20",
+    "itemspname": "Medicine",
+    "itemcount": 1,
+    "hp": 20,
+    "ack": 1
+  },
+  {
+    "itemname": "QiangHua",
+    "itemid": 1,
+    "itemsortindex": 0,
+    "itemdesc": "使用攻击力增强一倍",
+    "itemspname": "QiangHua",
+    "itemcount": 1,
+    "hp": 0,
+    "ack": 2
+  }
+]
