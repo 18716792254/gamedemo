@@ -111,17 +111,28 @@ public class EnemyHealthy : MonoBehaviour
         timer = 0;
 
         // 重置组件状态
-        CC.enabled = true;
-        SC.enabled = true;
-        NMA.enabled = true;
+        if (CC != null)
+            CC.enabled = true;
+        if (SC != null)
+            SC.enabled = true;
+        if (NMA != null)
+            NMA.enabled = true;
         GetComponent<Rigidbody>().isKinematic = false;
 
         // 重置动画器
-        Ani.Rebind();
-        Ani.Update(0f);
-
+        if (Ani != null)
+        {
+            Ani.Rebind();
+            Ani.Update(0f);
+        }
         // 重置音效
-        AS.Stop();
-        AS.clip = HurtAS;
+        if (AS != null)
+        {
+            AS.Stop();
+            if (HurtAS != null)
+            {
+                AS.clip = HurtAS;
+            }
+        }
     }
 }

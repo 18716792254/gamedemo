@@ -5388,7 +5388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2377522462604824770, guid: fab9344bb0edb5d48ad3fc368ef986bc, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3205704878111831684, guid: fab9344bb0edb5d48ad3fc368ef986bc, type: 3}
       propertyPath: Damage

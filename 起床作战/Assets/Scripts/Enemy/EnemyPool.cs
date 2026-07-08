@@ -75,7 +75,6 @@ public class EnemyPool : MonoBehaviour
         float RandomY = UnityEngine.Random.Range(-AreaSize.y / 2, AreaSize.y / 2);
         float RandomZ = UnityEngine.Random.Range(-AreaSize.z / 2, AreaSize.z / 2);
         Vector3 RandomPoint = Center + new Vector3(RandomX, RandomY, RandomZ);
-
         //ºÏ≤‚…˙≥…Œª÷√
         NavMeshHit hit;
         if (NavMesh.SamplePosition(RandomPoint, out hit, 5f, NavMesh.AllAreas))
