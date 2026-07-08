@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8995690309810220193}
   - component: {fileID: 2333733444363020268}
   - component: {fileID: 3221459234595249319}
+  - component: {fileID: 3578380566456286431}
   m_Layer: 6
   m_Name: Zombunny
   m_TagString: Untagged
@@ -294,6 +295,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attact: 5
+--- !u!114 &3578380566456286431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196144787480235808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547ed13667a3f8441a9ee3c9820cabf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPrefabs:
+  - prefab: {fileID: 4243899313745721133, guid: 359e174a658b75c46b11606165f06869, type: 3}
+    dropPercentage: 30
+  - prefab: {fileID: 7302452872253409039, guid: 5818e845df04dd94788bade2b654e1f9, type: 3}
+    dropPercentage: 10
+  noDropWeight: 60
 --- !u!1 &1196144787480235810
 GameObject:
   m_ObjectHideFlags: 0

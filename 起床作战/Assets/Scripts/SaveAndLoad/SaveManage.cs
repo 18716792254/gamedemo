@@ -12,8 +12,10 @@ using TMPro;
 public class PlayerData
 {
     // 角色基本信息
-    public string playerName;
-    //public Vector3 position; // 位置信息
+    // 位置信息
+    public float posX;
+    public float posY;
+    public float posZ;
 
     // 背包数据（包括道具栏数据）
     public List<ItemInfo> bagItems = new List<ItemInfo>();
@@ -42,24 +44,22 @@ public class SaveManage : SingleTon<SaveManage>
         try
         {
             PlayerData playerData = new PlayerData();
+            //保存角色基本信息
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerData.posX = player.transform.position.x;
+                playerData.posY = player.transform.position.y;
+                playerData.posZ = player.transform.position.z;
+            }
 
-            // 1. 保存角色基本信息（需要你自己维护这些数据）
-            // 示例：假设你有一个 PlayerController 管理角色数据
-            // playerData.playerName = PlayerController.Instance.playerName;
-            // playerData.level = PlayerController.Instance.level;
-            // playerData.exp = PlayerController.Instance.exp;
-            // playerData.currentHp = PlayerController.Instance.currentHp;
-            // playerData.maxHp = PlayerController.Instance.maxHp;
-            // playerData.gold = PlayerController.Instance.gold;
-            // playerData.position = PlayerController.Instance.transform.position;
-
-            // 2. 保存背包数据
+            //保存背包数据
             playerData.bagItems = InventoryManager.Instance.GetSaveData();
 
-            // 3. 序列化为JSON
+            //序列化为JSON
             string jsonData = JsonConvert.SerializeObject(playerData, Formatting.Indented);
 
-            // 4. 写入文件
+            //写入文件
             File.WriteAllText(saveFilePath, jsonData);
 
             Debug.Log("游戏保存成功！");
@@ -81,23 +81,20 @@ public class SaveManage : SingleTon<SaveManage>
                 return;
             }
 
-            // 1. 读取文件
+            //读取文件
             string jsonData = File.ReadAllText(saveFilePath);
 
-            // 2. 反序列化
+            //反序列化
             PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(jsonData);
-
-            // 3. 加载角色基本信息
-            // 示例：假设你有 PlayerController
-            // PlayerController.Instance.playerName = playerData.playerName;
-            // PlayerController.Instance.level = playerData.level;
-            // PlayerController.Instance.exp = playerData.exp;
-            // PlayerController.Instance.currentHp = playerData.currentHp;
-            // PlayerController.Instance.maxHp = playerData.maxHp;
-            // PlayerController.Instance.gold = playerData.gold;
-            // PlayerController.Instance.transform.position = playerData.position;
-
-            // 4. 加载背包数据
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            //加载角色基本信息
+            if (player != null)
+            {
+                player.transform.position = new Vector3(playerData.posX,playerData.posY,playerData.posZ);
+                
+                
+            }
+            //加载背包数据
             InventoryManager.Instance.LoadFromSaveData(playerData.bagItems);
 
             Debug.Log("游戏加载成功！");

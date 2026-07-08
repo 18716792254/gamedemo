@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4798374523050347405}
   - component: {fileID: 2500861332162292733}
   - component: {fileID: 5829144633550151322}
+  - component: {fileID: -1401663201715330402}
   m_Layer: 6
   m_Name: Hellephant
   m_TagString: Untagged
@@ -295,6 +296,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attact: 15
+--- !u!114 &-1401663201715330402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7957515590246554458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 547ed13667a3f8441a9ee3c9820cabf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropPrefabs:
+  - prefab: {fileID: 4243899313745721133, guid: 359e174a658b75c46b11606165f06869, type: 3}
+    dropPercentage: 50
+  - prefab: {fileID: 7302452872253409039, guid: 5818e845df04dd94788bade2b654e1f9, type: 3}
+    dropPercentage: 30
+  noDropWeight: 20
 --- !u!1 &8266867853104042004
 GameObject:
   m_ObjectHideFlags: 0

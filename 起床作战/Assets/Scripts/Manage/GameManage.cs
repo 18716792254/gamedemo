@@ -16,26 +16,11 @@ public class GameManage : MonoBehaviour
         WindowManage.Instance.Initial(Canvas.transform);
         InventoryManager.Instance.Initial();
         DataManage.Instance.Initial();
-        //SaveManage.Instance.Initial();
-        //SaveManage.Instance.Initial();
-        //if (SaveManage.Instance.HasSaveData())
-        //{
-        //    SaveManage.Instance.LoadGame();
-        //}
+        
     }
 
     void Update()
     {
-        // 示例：快捷键保存/加载
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    SaveManage.Instance.SaveGame();
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    SaveManage.Instance.LoadGame();
-        //}
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameObject.Find("Canvas/GameSetting(Clone)") != null)

@@ -23,6 +23,7 @@ public class EnemyHealthy : MonoBehaviour
     private bool IsSinking=false;
     private float DeathTime=2f;
     private float timer=0;
+    private EnemyDrops enemyDrops;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class EnemyHealthy : MonoBehaviour
         CC=GetComponent<CapsuleCollider>();
         NMA=GetComponent<NavMeshAgent>();
         SC=GetComponent<SphereCollider>();
+        enemyDrops = GetComponent<EnemyDrops>();
     }
 
     // Update is called once per frame
@@ -87,6 +89,8 @@ public class EnemyHealthy : MonoBehaviour
         //À¿Õˆ“Ù–ß
         AS.clip=DeathAS;
         AS.Play();
+        //µÙ¬‰ŒÔ∆∑
+        enemyDrops.DropItems();
     }
 
     public void StartSinking()

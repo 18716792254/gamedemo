@@ -8,13 +8,11 @@ public class LoadAneSaveGame : MonoBehaviour
 {
     public string fileName;
     public string filePath;
-    private GameObject loadMenu;
     private TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Awake()
     {
-        loadMenu = this.transform.parent.parent.transform.gameObject;
         text = GetComponentInChildren<TextMeshProUGUI>();
         SaveManage.Instance.GetFilePath(filePath);
         SaveManage.Instance.Initial();
