@@ -12,7 +12,7 @@ public class InventoryManager : SingleTon<InventoryManager>
     public int maxSlotCount = 15; // 最大背包格子数
     public int propSlotCount = 3;//道具格;
     public int Count = 0;
-    private bool isInitialized = false;
+    public bool isInitialized = false;
     private ItemInfo dataManage;
 
     public InventoryManager()
@@ -73,7 +73,6 @@ public class InventoryManager : SingleTon<InventoryManager>
         //IsStackable(newItem)可以删除，但是还是做个保障
         if (DisInBag(newItem) || !IsStackable(newItem))
         {
-            Debug.Log("不可堆叠物或没有的堆叠物");
             for (int i = 0; i < maxSlotCount; i++)
             {
                 if (itemList[i] == null)
@@ -86,7 +85,6 @@ public class InventoryManager : SingleTon<InventoryManager>
         }
         else if (!DisInBag(newItem) && IsStackable(newItem))
         {
-            Debug.Log("堆叠物");
             for (int i = 0; i < maxSlotCount; i++)
             {
                 if (itemList[i] != null)
@@ -126,7 +124,10 @@ public class InventoryManager : SingleTon<InventoryManager>
 
     public void Clear()
     {
-        itemList.Clear();
+        for (int i = 0; i < maxSlotCount + propSlotCount; i++)
+        {
+            itemList[i]=null;
+        }
     }
 
     public List<ItemInfo> GetSaveData()

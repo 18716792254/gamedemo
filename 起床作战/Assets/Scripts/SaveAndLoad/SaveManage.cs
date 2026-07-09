@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 /*
  bug：将物体放到道具栏，保存后若背包内没物体，则会报错，若有物体，或再次保存后就不会报错
  */
@@ -16,6 +17,8 @@ public class PlayerData
     public float posX;
     public float posY;
     public float posZ;
+    //得分
+    public int score;
 
     // 背包数据（包括道具栏数据）
     public List<ItemInfo> bagItems = new List<ItemInfo>();
@@ -52,7 +55,7 @@ public class SaveManage : SingleTon<SaveManage>
                 playerData.posY = player.transform.position.y;
                 playerData.posZ = player.transform.position.z;
             }
-
+            playerData.score = PlayerScore.Score;
             //保存背包数据
             playerData.bagItems = InventoryManager.Instance.GetSaveData();
 
@@ -91,7 +94,7 @@ public class SaveManage : SingleTon<SaveManage>
             if (player != null)
             {
                 player.transform.position = new Vector3(playerData.posX,playerData.posY,playerData.posZ);
-                
+                PlayerScore.Score = playerData.score;
                 
             }
             //加载背包数据

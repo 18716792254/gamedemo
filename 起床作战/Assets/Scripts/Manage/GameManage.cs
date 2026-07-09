@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,7 +17,6 @@ public class GameManage : MonoBehaviour
         WindowManage.Instance.Initial(Canvas.transform);
         InventoryManager.Instance.Initial();
         DataManage.Instance.Initial();
-        
     }
 
     void Update()
@@ -46,11 +46,23 @@ public class GameManage : MonoBehaviour
     public void OpenLoadSetting()
     {
         WindowManage.Instance.OpenWindow<LoadMenuWindow>();
+        GameObject loadWindow = Canvas.transform.Find("LoadMenuWindow(Clone)").gameObject;
+        LoadAneSaveGame[] load = loadWindow.GetComponentsInChildren<LoadAneSaveGame>();
+        foreach (var item in load)
+        {
+            item.ReflashUI();
+        }
     }
 
     public void OpenSaveSetting()
     {
         WindowManage.Instance.OpenWindow<SaveMenuWindow>();
+        GameObject saveWindow = Canvas.transform.Find("SaveMenuWindow(Clone)").gameObject;
+        LoadAneSaveGame[] save = saveWindow.GetComponentsInChildren<LoadAneSaveGame>();
+        foreach (var item in save)
+        {
+            item.ReflashUI();
+        }
     }
 
     public void OpenSetting()

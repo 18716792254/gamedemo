@@ -77,6 +77,7 @@ public class DataManage : SingleTon<DataManage>
         ItemInfoList=JsonConvert.DeserializeObject<List<ItemInfo>>(jsondata);
         for (int i = 0; i < ItemInfoList.Count; i++)
         {
+            if(!ItemInfos.ContainsKey(ItemInfoList[i].itemid))
             ItemInfos.Add(ItemInfoList[i].itemid, ItemInfoList[i]);
         }
     }

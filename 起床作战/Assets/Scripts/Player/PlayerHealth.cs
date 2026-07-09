@@ -92,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void RestartLevel()
     {
-        PlayerScore.Score=0;
+        PlayerScore.Score = 0;
         SceneManager.LoadScene(0);
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public float damage=50f;
     public float TimerBetween = 0.15f;
     float Timer = 0;
     float EffectTime=0.2f;
@@ -58,7 +59,7 @@ public class PlayerShooting : MonoBehaviour
             EnemyHealthy EH = ShootHit.collider.GetComponent<EnemyHealthy>();
             if(!EH.EnemyDeath)
             {
-                EH.Damage(50f, ShootHit.point);
+                EH.Damage(damage, ShootHit.point);
             }
         }
         else

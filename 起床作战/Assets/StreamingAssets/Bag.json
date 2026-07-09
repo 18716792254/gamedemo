@@ -7,16 +7,16 @@
     "itemspname": "Medicine",
     "itemcount": 1,
     "hp": 20,
-    "ack": 1
+    "ack": 0
   },
   {
     "itemname": "QiangHua",
     "itemid": 1,
     "itemsortindex": 0,
-    "itemdesc": "使用攻击力增强一倍",
+    "itemdesc": "使伤害+10",
     "itemspname": "QiangHua",
     "itemcount": 1,
     "hp": 0,
-    "ack": 2
+    "ack": 10
   }
 ]

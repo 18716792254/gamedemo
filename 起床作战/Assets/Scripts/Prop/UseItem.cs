@@ -99,11 +99,12 @@ public class UseItem : MonoBehaviour
             if (player != null)
             {
                 PlayerHealth health = player.GetComponent<PlayerHealth>();
-
+                PlayerShooting damage = player.GetComponentInChildren<PlayerShooting>();
                 if (health != null && !health.IsDeath)
                 {
                     // 恢复血量
                     health.Blood += currentItem.hp;
+                    damage.damage = damage.damage + currentItem.ack;
                     if (health.Blood > 100) health.Blood = 100;
 
                     // 减少数量

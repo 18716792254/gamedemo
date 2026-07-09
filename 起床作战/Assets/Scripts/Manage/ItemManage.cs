@@ -175,39 +175,6 @@ public class ItemManage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 tmpObj.GetComponent<CanvasGroup>().blocksRaycasts = true;
             }
         }
-        
-
-        //    transform.SetParent(OriginalParent);
-        //    transform.position = OriginalParent.transform.position;
-        //    if (eventData.pointerCurrentRaycast.gameObject == null || eventData.pointerCurrentRaycast.gameObject.name != "tp")
-        //    {
-        //        transform.SetParent(OriginalParent);
-        //        transform.position = OriginalParent.transform.position;
-        //        GetComponent<CanvasGroup>().blocksRaycasts = true;
-        //    }
-        //    else if (eventData.pointerCurrentRaycast.gameObject.name == "tp")
-        //    {
-
-            //        transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);//将原物体转移到鼠标下的格子的slot中
-            //        transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;//让被拖拽物体移到鼠标所指的格子里
-            //        eventData.pointerCurrentRaycast.gameObject.transform.parent.position = OriginalParent.position;//把格子里有的物体移到原物体位置
-            //        eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(OriginalParent);//给被更改物体移到原物体的slot里
-            //        if (transform.parent.name=="PropSlot1" || transform.parent.name == "PropSlot2" || transform.parent.name == "PropSlot3")
-            //        {
-            //            GetComponent<UseItem>().enabled=true;
-            //        }
-            //        else
-            //        {
-            //            GetComponent<UseItem>().enabled = false;
-            //        }
-            //            GetComponent<CanvasGroup>().blocksRaycasts = true;
-            //    }
-            //    else
-            //    {
-            //        transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
-            //        transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
-            //        GetComponent<CanvasGroup>().blocksRaycasts = true;
-            //    }
     }
 
 }
