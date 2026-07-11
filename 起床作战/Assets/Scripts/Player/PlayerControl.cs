@@ -44,6 +44,7 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
+            Time.timeScale = 0f;
             WindowManage.Instance.OpenWindow<BagWindow>();
         }
     }
@@ -54,7 +55,6 @@ public class PlayerControl : MonoBehaviour
         ItemInfo itemInfo = DataManage.Instance.GetItem(itemid);
         if (itemInfo == null)
         {
-            Debug.LogWarning($"找不到ID为 {itemid} 的物品数据");
             return;
         }
         //存入InventoryManager
@@ -62,7 +62,6 @@ public class PlayerControl : MonoBehaviour
 
         if (success)
         {
-            //Debug.Log($"拾取了：{itemInfo.itemname}");
             Destroy(pickupObject);
         }
         else

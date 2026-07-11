@@ -12,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public AudioClip AC;
     //受伤间隔
-    public float timer = 1f;
+    public float timer = 0.5f;
     public float time = 0;
     //玩家血量
     public float Blood=100f;

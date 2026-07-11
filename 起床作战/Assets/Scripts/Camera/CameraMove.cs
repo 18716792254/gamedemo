@@ -14,13 +14,7 @@ public class CameraMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - player.transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //transform.position = Vector3.Lerp(transform.position, player.transform.position + offset,0.1f);
+        offset = transform.position - new Vector3(0,0,0);
     }
     private void FixedUpdate()
     {

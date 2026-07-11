@@ -151,18 +151,19 @@ public class InventoryManager : SingleTon<InventoryManager>
         int totalSlots = maxSlotCount + propSlotCount;
         for (int i = 0; i < totalSlots; i++)
         {
-            itemList.Add(null);
+            itemList[i] = null;
         }
         ItemInfos.Clear();
         Count = 0;
 
         // 加载物品
-        for (int i = 0; i < saveData.Count && i < totalSlots; i++)
+        for (int i = 0;i < totalSlots; i++)
         {
             if (saveData[i] != null && saveData[i].itemsortindex == (int)ItemSortEnum.药物)
             {
                 ItemInfo newItem = saveData[i].CloneProp();
                 itemList[i] = newItem;
+                if(!ItemInfos.ContainsKey(newItem.itemid))
                 ItemInfos.Add(newItem.itemid, newItem);
                 Count++;
             }

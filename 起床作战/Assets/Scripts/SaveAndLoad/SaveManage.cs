@@ -46,7 +46,6 @@ public class SaveManage : SingleTon<SaveManage>
     {
         try
         {
-            Debug.Log("=== 开始保存游戏 ===");
             PlayerData playerData = new PlayerData();
             //保存角色基本信息
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -90,11 +89,10 @@ public class SaveManage : SingleTon<SaveManage>
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             //加载角色基本信息
             GameManage.vec = new Vector3(playerData.posX, playerData.posY, playerData.posZ);
+            if(player != null)player.transform.position = GameManage.vec;
             PlayerScore.Score = playerData.score;
             //加载背包数据
             InventoryManager.Instance.LoadFromSaveData(playerData.bagItems);
-
-            Debug.Log("游戏加载成功！");
         }
         catch (System.Exception e)
         {

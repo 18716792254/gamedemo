@@ -29,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Time.timeScale == 0f) return;
         Timer +=Time.deltaTime;
         if (Input.GetMouseButton(0)&&Timer>=TimerBetween)
         {

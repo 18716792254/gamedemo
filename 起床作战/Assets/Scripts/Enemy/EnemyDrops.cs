@@ -10,7 +10,6 @@ public class EnemyDrops : MonoBehaviour
 
     public void DropItems()
     {
-        Debug.Log("DropItems()beizhixing");
         // 计算总权重
         float totalWeight = noDropWeight;
         foreach (var drop in dropPrefabs)
@@ -19,7 +18,6 @@ public class EnemyDrops : MonoBehaviour
         }
         float randomValue = Random.Range(0f, totalWeight);
         float currentWeight = noDropWeight;
-        Debug.Log(randomValue);
         if (randomValue <= noDropWeight)
         {
             return;  // 不掉落
@@ -30,7 +28,6 @@ public class EnemyDrops : MonoBehaviour
             currentWeight += drop.dropPercentage;
             if (randomValue <= currentWeight)
             {
-                Debug.Log(drop.prefab.name);
                 Instantiate(drop.prefab, transform.position, Quaternion.identity);
                 break;
             }

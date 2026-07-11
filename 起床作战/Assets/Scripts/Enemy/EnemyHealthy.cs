@@ -68,7 +68,7 @@ public class EnemyHealthy : MonoBehaviour
         }
     }
 
-    private bool IsDeath()
+    public bool IsDeath()
     {
         if(Blood<=0)return true;
         else return false;

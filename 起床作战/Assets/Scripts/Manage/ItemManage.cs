@@ -40,7 +40,6 @@ public class ItemManage : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         {
             return;
         }
-        Debug.Log(itemList[index]==null);
         itemSprite = Resources.Load<Sprite>("UI/" + itemList[index].itemname);
         tmpObj.SetActive(true);
         tmpObj.transform.SetAsLastSibling();

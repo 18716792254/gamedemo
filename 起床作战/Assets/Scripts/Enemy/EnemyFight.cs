@@ -1,3 +1,4 @@
+using CompleteProject;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,14 @@ using UnityEngine.AI;
 public class EnemyFight : MonoBehaviour
 {
     public int Attact;
-
+    private EnemyHealthy health;
     private bool PlayerIsLife=true;
     private bool PlayerIsNext = false;
-    private float timer=0.5f;
-    private float theTime=0;
     private Animator Ani;
     // Start is called before the first frame update
     void Start()
     {
+        health = GetComponent<EnemyHealthy>();
         Ani=GetComponent<Animator>();
     }
 
@@ -29,7 +29,7 @@ public class EnemyFight : MonoBehaviour
         PlayerIsLife = !(GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().IsDeath);
         if (PlayerIsLife)
         {
-            if (PlayerIsNext)
+            if (PlayerIsNext && !health.IsDeath())
             {
                 GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().GetHurt(Attact);
             }

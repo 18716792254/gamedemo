@@ -50,6 +50,7 @@ public class BagWindow : BaseWindow
     {
         if (GameObject.Find("Info") != null)
             GameObject.Find("Info").SetActive(false);
+        Time.timeScale = 1f;
         CloseWindow();
     }
 
