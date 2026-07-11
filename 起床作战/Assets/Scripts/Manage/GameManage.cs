@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManage : MonoBehaviour
 {
+    public GameObject player;
+    public static Vector3 vec;
     public GameObject Canvas;
     public GameObject setting;
     public LoadMenuWindow loadWindow;
@@ -17,6 +19,8 @@ public class GameManage : MonoBehaviour
         WindowManage.Instance.Initial(Canvas.transform);
         InventoryManager.Instance.Initial();
         DataManage.Instance.Initial();
+        player = GameObject.FindWithTag("Player");
+        player.transform.position = vec;
     }
 
     void Update()

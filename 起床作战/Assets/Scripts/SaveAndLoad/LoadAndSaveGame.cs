@@ -17,25 +17,26 @@ public class LoadAneSaveGame : MonoBehaviour
     void Awake()
     {
         button = GetComponent<Button>();
-        bg = GameObject.FindWithTag("background");
         text = GetComponentInChildren<TextMeshProUGUI>();
-        button.onClick.AddListener(Load);
-        if (bg!=null)
+        if (button.onClick.GetPersistentEventCount() == 0)
         {
-            StartGame bgLoad = bg.GetComponent<StartGame>();
-            button.onClick.AddListener(bgLoad.LoadGame);
+            button.onClick.AddListener(Load);
+            bg = GameObject.FindWithTag("background");
+            if (bg != null)
+            {
+                StartGame bgLoad = bg.GetComponent<StartGame>();
+                button.onClick.AddListener(bgLoad.LoadGame);
+            }
+            SaveManage.Instance.GetFilePath(filePath);
+            SaveManage.Instance.Initial();
+            ReflashUI();
         }
-        SaveManage.Instance.GetFilePath(filePath);
-        SaveManage.Instance.Initial();
-        ReflashUI();
     }
 
     public void ReflashUI()
     {
         SaveManage.Instance.GetFilePath(filePath);
         SaveManage.Instance.Initial();
-        Debug.Log("ReflashUI()" + fileName);
-        Debug.Log(SaveManage.Instance.HasSaveData());
         if (SaveManage.Instance.HasSaveData())
         {
             text.text = fileName;

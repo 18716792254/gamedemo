@@ -536,18 +536,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7877095280799699073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be583b8720fbe4bb779387278fb6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 0}
   fileName: save2
   filePath: save2.json
 --- !u!1 &3769032442552578052
@@ -829,18 +818,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &679868261829014382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -853,6 +830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be583b8720fbe4bb779387278fb6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 0}
   fileName: save4
   filePath: save4.json
 --- !u!1 &4325697467670143350
@@ -1169,18 +1147,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &7874313622933701514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,6 +1159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be583b8720fbe4bb779387278fb6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 0}
   fileName: save3
   filePath: save3.json
 --- !u!1 &5362179989052914719
@@ -1381,6 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be583b8720fbe4bb779387278fb6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 0}
   fileName: save1
   filePath: save1.json
 --- !u!1 &5758853282848968230
@@ -1861,18 +1829,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: LoadGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4891609173984374646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1885,6 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17be583b8720fbe4bb779387278fb6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bg: {fileID: 0}
   fileName: save5
   filePath: save5.json
 --- !u!1 &7723391868859910411

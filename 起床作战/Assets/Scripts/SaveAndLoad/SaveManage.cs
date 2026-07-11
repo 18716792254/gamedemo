@@ -46,6 +46,7 @@ public class SaveManage : SingleTon<SaveManage>
     {
         try
         {
+            Debug.Log("=== 开始保存游戏 ===");
             PlayerData playerData = new PlayerData();
             //保存角色基本信息
             GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -58,17 +59,14 @@ public class SaveManage : SingleTon<SaveManage>
             playerData.score = PlayerScore.Score;
             //保存背包数据
             playerData.bagItems = InventoryManager.Instance.GetSaveData();
-
             //序列化为JSON
             string jsonData = JsonConvert.SerializeObject(playerData, Formatting.Indented);
-
             //写入文件
             File.WriteAllText(saveFilePath, jsonData);
-
-            Debug.Log("游戏保存成功！");
         }
         catch (System.Exception e)
         {
+            Debug.LogError($"保存失败: {e.Message}\n堆栈跟踪:\n{e.StackTrace}");
             Debug.LogError($"保存失败: {e.Message}");
         }
     }
@@ -91,12 +89,8 @@ public class SaveManage : SingleTon<SaveManage>
             PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(jsonData);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             //加载角色基本信息
-            if (player != null)
-            {
-                player.transform.position = new Vector3(playerData.posX,playerData.posY,playerData.posZ);
-                PlayerScore.Score = playerData.score;
-                
-            }
+            GameManage.vec = new Vector3(playerData.posX, playerData.posY, playerData.posZ);
+            PlayerScore.Score = playerData.score;
             //加载背包数据
             InventoryManager.Instance.LoadFromSaveData(playerData.bagItems);
 

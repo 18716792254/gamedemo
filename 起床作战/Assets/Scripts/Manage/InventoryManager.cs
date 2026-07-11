@@ -137,7 +137,7 @@ public class InventoryManager : SingleTon<InventoryManager>
         {
             saveData.Add(null);
         }
-        for (int i = 0; i < itemList.Count; i++)
+        for (int i = 0; i < maxSlotCount + propSlotCount; i++)
         {
             saveData[i] = itemList[i];
         }
@@ -147,9 +147,6 @@ public class InventoryManager : SingleTon<InventoryManager>
 
     internal void LoadFromSaveData(List<ItemInfo> saveData)
     {
-        // 清空当前背包
-        Clear();
-
         // 重新初始化
         int totalSlots = maxSlotCount + propSlotCount;
         for (int i = 0; i < totalSlots; i++)
@@ -164,8 +161,7 @@ public class InventoryManager : SingleTon<InventoryManager>
         {
             if (saveData[i] != null && saveData[i].itemsortindex == (int)ItemSortEnum.药物)
             {
-                // 创建副本，避免引用问题
-                ItemInfo newItem = saveData[i].CloneProp(); // 使用你已有的克隆方法
+                ItemInfo newItem = saveData[i].CloneProp();
                 itemList[i] = newItem;
                 ItemInfos.Add(newItem.itemid, newItem);
                 Count++;

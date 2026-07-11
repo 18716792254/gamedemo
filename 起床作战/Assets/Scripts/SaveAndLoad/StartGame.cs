@@ -18,6 +18,8 @@ public class StartGame : MonoBehaviour
     }
     public void LoadNewGame()
     {
+        PlayerScore.Score = 0;
+        GameManage.vec = new Vector3(0,0,0);
         InventoryManager.Instance.Clear();
         SceneManager.LoadScene(1);
     }
