@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     private GameObject player;
     private PlayerHealth isDeath;

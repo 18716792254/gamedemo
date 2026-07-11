@@ -57,6 +57,7 @@ public class PlayerShooting : MonoBehaviour
         {
             LR.SetPosition(1,ShootHit.point);
             EnemyHealthy EH = ShootHit.collider.GetComponent<EnemyHealthy>();
+            if(EH == null)return;
             if(!EH.EnemyDeath)
             {
                 EH.Damage(damage, ShootHit.point);

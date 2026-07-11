@@ -1079,7 +1079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &176122278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1615,6 +1615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654d191bc31f58449863f8f0141e9866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   Canvas: {fileID: 127400446}
   setting: {fileID: 385296205}
 --- !u!1001 &358780615
@@ -3694,7 +3695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1385606395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4704,7 +4705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1865140370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5448,7 +5449,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264570061051507000, guid: fab9344bb0edb5d48ad3fc368ef986bc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8264570061051507056, guid: fab9344bb0edb5d48ad3fc368ef986bc, type: 3}
       propertyPath: m_Name
