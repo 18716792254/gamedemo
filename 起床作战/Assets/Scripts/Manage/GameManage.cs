@@ -38,10 +38,12 @@ public class GameManage : MonoBehaviour
             }
             if (setting.activeSelf)
             {
+                Time.timeScale = 1f;
                 setting.SetActive(false);
             }
             else
             {
+                Time.timeScale = 0f;
                 setting.SetActive(true);
             }
         }
