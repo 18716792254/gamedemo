@@ -11,6 +11,7 @@ TagManager:
   - setting
   - background
   - canvas
+  - monster
   layers:
   - Default
   - TransparentFX

@@ -7,13 +7,10 @@ public class CameraMove : MonoBehaviour
     private GameObject player;
     private Vector3 offset;
 
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         offset = transform.position - new Vector3(0,0,0);
     }
     private void FixedUpdate()

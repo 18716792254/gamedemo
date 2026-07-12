@@ -12,6 +12,10 @@ using UnityEngine.SocialPlatforms.Impl;
 [Serializable]
 public class PlayerData
 {
+    //场上怪物位置信息
+    public float x;
+    public float y;
+    public float z;
     // 角色基本信息
     // 位置信息
     public float posX;
@@ -87,6 +91,11 @@ public class SaveManage : SingleTon<SaveManage>
             //反序列化
             PlayerData playerData = JsonConvert.DeserializeObject<PlayerData>(jsonData);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject[] tmpmonsters = GameObject.FindGameObjectsWithTag("monster");
+            foreach (var item in tmpmonsters)
+            {
+                item.SetActive(false);
+            }
             //加载角色基本信息
             GameManage.vec = new Vector3(playerData.posX, playerData.posY, playerData.posZ);
             if(player != null)player.transform.position = GameManage.vec;

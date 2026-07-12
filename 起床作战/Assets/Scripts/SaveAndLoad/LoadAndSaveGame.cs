@@ -52,6 +52,7 @@ public class LoadAneSaveGame : MonoBehaviour
         SaveManage.Instance.GetFilePath(filePath);
         SaveManage.Instance.Initial();
         SaveManage.Instance.LoadGame();
+        Time.timeScale = 1f;
     }
 
     public void Save()

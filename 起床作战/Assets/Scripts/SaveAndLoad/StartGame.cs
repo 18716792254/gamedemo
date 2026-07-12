@@ -21,6 +21,7 @@ public class StartGame : MonoBehaviour
         PlayerScore.Score = 0;
         GameManage.vec = new Vector3(0,0,0);
         InventoryManager.Instance.Clear();
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
     public void LoadGame()
